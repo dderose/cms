@@ -1,0 +1,10 @@
+
+//visually hide element
+%visuallyHidden {
+    position: absolute !important;
+    left: -10000px !important;
+    top: auto !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}

@@ -1,0 +1,120 @@
+// Base stuff
+$base-font-size:    16!default;
+$base-line-height:  24!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+
+// Base font-family.
+$base-font-family:  Verdana, Helvetica Neue, Arial, sans-serif!default;
+
+
+// Default border-radius
+$brand-round:        4!default;
+
+
+// Default transtion
+$brand-transition:        all 0.4s cubic-bezier(1, 0, 0.5, 1)!default;
+
+
+// Spacing units
+$base-spacing-unit: $base-line-height;
+$half-spacing-unit: $base-line-height / 2!default;
+$one-and-half-spacing-unit: $base-line-height * 1.5!default;
+$double-spacing-unit: $base-line-height * 2!default;
+
+
+// Breakpoints
+$breakpoint1:   481px!default;
+$breakpoint2:   620px!default;
+$breakpoint3:   769px!default;
+$breakpoint4:   1000px!default;
+$breakpoint5:   1280px!default;
+
+
+// Font sizes
+$giga-size:         56!default;
+$mega-size:         42!default;
+$kilo-size:         38!default;
+$centi-size:        14!default;
+$milli-size:        12!default;
+$micro-size:        10!default;
+
+$h1-size:           32!default; // .alpha
+$h2-size:           24!default; // .beta
+$h3-size:           20!default; // .gamma
+$h4-size:           18!default; // .delta
+$h5-size:           16!default; // .epsilon
+$h6-size:           14!default; // .zeta
+
+
+// Font colors
+$color1:  #67737c!default; // Base color
+$color2:  #2584cf!default; // Link color
+$color3:  #5b656d!default; // Heading color
+$color4:  #4b555c!default; // Heading color 2
+$color5:  #58799d!default; // Title color
+
+// Background colors
+$bgcolorPrimary1:      #00477f!default;
+$bgcolorPrimary2:      #f7f9fb!default;
+$bgcolorPrimary3:      #f5f8fa!default;
+$bgcolorPrimary4:      #5b656d!default;
+$bgcolorPrimary5:      #4b555c!default;
+
+
+// $BORDER COLLORS
+$brdrColor: #dee4eb!default;
+$brdrColorDark: #b0b6bb!default;
+
+
+/*------------------------------------*\
+    $BUTTON COLLORS AND ATTRIBUTES
+\*------------------------------------*/
+/**
+ * Button-colors (in hex). Refer to relevant sections for their implementations.
+ */
+// $btnColor:                  #f7f9fb!default;
+// $btnColorHover:             darken($btnColor,10%)!default;
+// $btnColorActive:            darken($btnColor,20%)!default;
+// $btnTxtColor:               $color2!default;
+// $btnTxtColorActive:         $color2!default;
+
+// $btnColorDisabled:          #ebedee!default;
+// $btnTxtColorDisabled:       $color6!default;
+
+// $btnColorAction:            #338ecd!default;
+// $btnColorActionHover:       #51a5e0!default;
+// $btnColorActionActive:      #2c7fb8!default;
+
+// $btnFontSize:               $h4-size!default;
+// $btnSmallFontSize:          $base-font-size!default;
+
+// $btnRound:                  3!default;
+
+/*------------------------------------*\
+    $QUOTES
+\*------------------------------------*/
+/**
+ * English quote marks?
+ */
+$english-quotes:    true!default;
+
+/**
+ * If you want English quotes then please do not edit these; they’re only here
+ * because Sass needs them.
+ */
+$open-quote:    null;
+$close-quote:   null;
+
+@if $english-quotes == true {
+    $open-quote:    \201C;
+    $close-quote:   \201D;
+}
+
+/**
+ * If you need non-English quotes, please alter the following values accordingly:
+ */
+@if $english-quotes != true {
+    $open-quote:    \00AB;
+    $close-quote:   \00BB;
+}

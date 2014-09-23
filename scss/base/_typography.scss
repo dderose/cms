@@ -1,0 +1,230 @@
+// Typography
+//
+// The base typography establishes base font family, font sizes, font colors, scale, and vertical rhythm/tempo.
+//
+// The typographic scale used is the <em>traditional</em> scale. See http://lamb.cc/typograph/ for more information on scale and vertical rhythm/tempo.
+//
+// Additionally, we use a mixin to calculate font-size that also calculates the appropriate line-height and margin-bottom to maintain the vertical rhythm/tempo. See http://twitter.com/redclov3r/status/250301539321798657.
+//
+// To use the fonts in FED, an additional link must be provided with the fed link. This uses <a href="http://www.typography.com/" target="_blank">cloud.typography</a> to determine a version of the font file specific to the OS &amp; OS version of the user to give them the ultimate font experience. The typography link will grab a font file hosted off our servers, of which there are 40 different ones. <strong>Please do not link directly to our hosted files, as it breaks our agreement with Typography</strong>.
+//
+// <code>&lt;link rel="stylesheet" href="//cloud.typography.com/7508852/770622/css/fonts.css" /></code>
+//
+// Styleguide 1.3.0
+
+/*------------------------------------*\
+$MAIN
+\*------------------------------------*/
+html {
+    font: $base-font-size + px $base-font-family;
+    font: rem($base-font-size) $base-font-family;
+    overflow-y: scroll;
+    min-height: 100%;
+}
+
+body {
+	line-height: $line-height-ratio;
+	color: $color1;
+}
+
+// Base link styling
+//
+// Dark blue, underline on hover
+//
+// Markup: <a href="#">This is what links looks like by default.</a>
+//
+// Styleguide 1.3.1
+a {
+    color: $color2;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// Base paragraph styling
+//
+// Just a base sizing applied of 16
+//
+// Markup: <p>This is what a paragraph looks like by default.</p>
+//
+// Styleguide 1.3.2
+
+// Base margin spacing between elements
+//
+// Where `margin-bottom` is concerned, this value will be the same as the
+// base line-height. This allows us to keep a consistent vertical rhythm.
+// As per: csswizardry.com/2012/06/single-direction-margin-declarations
+//
+// Styleguide 1.3.3
+h1,h2,h3,h4,h5,h6,hgroup,
+ul,ol,dl,
+blockquote,p,address,
+table,
+legend, fieldset,figure,
+pre {
+    margin-bottom: $base-spacing-unit + px;
+    margin-bottom: ($base-spacing-unit / $base-font-size) * 1rem;
+}
+
+// Base heading sizing
+//
+// Sizing for each of the native heading elements
+//
+// Markup: <h1>h1 to test</h1>
+// <h2>h2 to test</h2>
+// <h3>h3 to test</h3>
+// <h4>h4 to test</h4>
+// <h5>h5 to test</h5>
+// <h6>h6 to test</h6>
+//
+// Styleguide 1.3.4
+h1 {   
+	@include font-size($h1-size);
+}
+
+h2 {
+	@include font-size($h2-size);
+}
+
+h3 {
+	@include font-size($h3-size);
+}
+
+h4 {
+	@include font-size($h4-size);
+}
+
+h5 {
+	@include font-size($h5-size);
+}
+
+h6 {
+	@include font-size($h6-size);
+}
+
+// Base List Spacing
+//
+// Default list style and nesting.
+//
+// Markup: <ul>
+//   <li>This is an unordered list to test
+//     <ul>
+//        <li>This is a nested unordered list to test</li>
+//        <li>This is a nested unordered list to test</li>
+//        <li>This is a nested unordered list to test</li>
+//        <li>This is a nested unordered list to test</li>
+//     </ul>
+//   </li>
+//   <li>This is an unordered list to test</li>
+//   <li>This is an unordered list to test</li>
+//   <li>This is an unordered list to test</li>
+// </ul>
+// <ol>
+//   <li>This is an ordered list to test
+//     <ol>
+//        <li>This is a nested ordered list to test</li>
+//        <li>This is a nested ordered list to test</li>
+//        <li>This is a nested ordered list to test</li>
+//        <li>This is a nested ordered list to test</li>
+//     </ol>
+//   </li>
+//   <li>This is an ordered list to test</li>
+//   <li>This is an ordered list to test</li>
+//   <li>This is an ordered list to test</li>
+// </ol>
+//
+// Styleguide 1.3.5
+ul,
+ol {
+    margin: 0 0 $base-spacing-unit+px;
+    margin: 0 0 rem($base-spacing-unit);
+    padding: 0;
+
+    ul {
+      width: 100%;
+      margin: $half-spacing-unit + px 0 -$half-spacing-unit + px;
+      margin: rem($half-spacing-unit) 0 rem(-$half-spacing-unit);
+    }
+}
+  li {
+      position: relative;
+      margin: 0 0 $half-spacing-unit + px $base-spacing-unit + px;
+      margin: 0 0 rem($half-spacing-unit) rem($base-spacing-unit);
+    }
+
+// Inline Quotes
+//
+// Styling for quotes inline
+//
+// Markup: <q>This is what an inline quote looks like by default.</q>
+//
+// Styleguide 1.3.6
+q {
+    quotes: "\2018" "\2019" "#{$open-quote}" "#{$close-quote}";
+
+    &:before{
+        content: "\2018";
+        content: open-quote;
+    }
+    &:after{
+        content: "\2019";
+        content: close-quote;
+    }
+
+    q:before{
+        content: "\201C";
+        content: open-quote;
+    }
+    q:after{
+        content: "\201D";
+        content: close-quote;
+    }
+}
+
+// Block Quotes
+//
+// Styling for block quotes
+//
+// Markup: <blockquote>
+//       <p>Insanity: doing the same thing over and over again and expecting
+//       different results.</p>
+//       <b class="u-source">Albert Einstein</b>
+//   </blockquote>
+//
+// Styleguide 1.3.7
+blockquote {
+    quotes: "#{$open-quote}" "#{$close-quote}";
+
+    p:before {
+        content: "#{$open-quote}";
+        content: open-quote;
+    }
+    p:after {
+        content: "";
+        content: no-close-quote;
+    }
+    p:last-of-type:after {
+        content: "#{$close-quote}";
+        content: close-quote;
+    }
+
+    q:before {
+        content: "\2018";
+        content: open-quote;
+    }
+    q:after {
+        content: "\2019";
+        content: close-quote;
+    }
+}
+
+//.4em is roughly equal to the width of the opening “ that we wish to hang.
+blockquote {
+    text-indent: -0.41em;
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
